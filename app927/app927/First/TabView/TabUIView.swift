@@ -10,19 +10,17 @@ import SwiftUI
 struct TabUIView: View {
     @State var selectedTab = 0
     private let tabs = ["Home", "Attractions", "Memories", "Settings"]
-    
-//    @ObservedObject var collectionVM = CollectionViewModel()
+    @ObservedObject var workoutVM = WorkoutViewModel()
 //    @ObservedObject var settingsVM = SettingsViewModel()
     var body: some View {
         ZStack {
             
             switch selectedTab {
             case 0:
-               // HomeUIView(viewModel: collectionVM)
-                Text("Home")
+                HomeUIView(viewModel: workoutVM)
             case 1:
                // MyCollectionUIView(viewModel: collectionVM)
-                Text("My workouts")
+                WorkoutsUIView(viewModel: workoutVM)
             case 2:
               //  PlannedUIView(viewModel: collectionVM)
                 Text("Statistics")
@@ -38,7 +36,7 @@ struct TabUIView: View {
                     ZStack {
                         Rectangle()
                             .fill(Color.secondBG)
-                            .frame(height: 80)
+                            .frame(height: 83)
                             
                         HStack(spacing: 50) {
                             ForEach(0..<tabs.count) { index in
