@@ -29,14 +29,14 @@ struct UsOnboardingUIView: View {
                             switch pageNum {
                             case 1:
                                 
-                                    Image("logo2923")
+                                    Image("logo2927")
                                     .padding(.top, 100)
                                 
-                            case 2: Image("ratings923")
+                            case 2: Image("ratings927")
                                     //.resizable()
                                     .aspectRatio(contentMode: .fit)
                             default:
-                                Image("notifications874")
+                                Image("notifications927")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: 500)
