@@ -14,6 +14,7 @@
 		2B58EB2C2C9C139000EF694C /* LoaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EB2B2C9C139000EF694C /* LoaderUIView.swift */; };
 		2B58EB2E2C9C142100EF694C /* ReOnboardingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EB2D2C9C142100EF694C /* ReOnboardingUIView.swift */; };
 		2B58EB302C9C16EF00EF694C /* UsOnboardingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EB2F2C9C16EF00EF694C /* UsOnboardingUIView.swift */; };
+		2B58EB332C9C1A6500EF694C /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EB322C9C1A6500EF694C /* TabUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2B58EB2B2C9C139000EF694C /* LoaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderUIView.swift; sourceTree = "<group>"; };
 		2B58EB2D2C9C142100EF694C /* ReOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReOnboardingUIView.swift; sourceTree = "<group>"; };
 		2B58EB2F2C9C16EF00EF694C /* UsOnboardingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsOnboardingUIView.swift; sourceTree = "<group>"; };
+		2B58EB322C9C1A6500EF694C /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		2B58EB262C9C135E00EF694C /* First */ = {
 			isa = PBXGroup;
 			children = (
+				2B58EB312C9C1A5300EF694C /* TabView */,
 				2B58EB292C9C137600EF694C /* Onboarding */,
 			);
 			path = First;
@@ -114,6 +117,14 @@
 				2B58EB2B2C9C139000EF694C /* LoaderUIView.swift */,
 			);
 			path = LoaderView;
+			sourceTree = "<group>";
+		};
+		2B58EB312C9C1A5300EF694C /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				2B58EB322C9C1A6500EF694C /* TabUIView.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			files = (
 				2B58EB1B2C9C12AB00EF694C /* ContentView.swift in Sources */,
 				2B58EB192C9C12AB00EF694C /* app927App.swift in Sources */,
+				2B58EB332C9C1A6500EF694C /* TabUIView.swift in Sources */,
 				2B58EB302C9C16EF00EF694C /* UsOnboardingUIView.swift in Sources */,
 				2B58EB2E2C9C142100EF694C /* ReOnboardingUIView.swift in Sources */,
 				2B58EB2C2C9C139000EF694C /* LoaderUIView.swift in Sources */,
