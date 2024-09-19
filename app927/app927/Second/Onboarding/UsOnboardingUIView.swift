@@ -29,11 +29,10 @@ struct UsOnboardingUIView: View {
                             switch pageNum {
                             case 1:
                                 
-                                    Image("logo2927")
-                                    .padding(.top, 100)
-                                
+                                Image("logo2927-2")
+                                    .padding(.top, 15)
+                                Image("logo2927")
                             case 2: Image("ratings927")
-                                    //.resizable()
                                     .aspectRatio(contentMode: .fit)
                             default:
                                 Image("notifications927")
@@ -45,7 +44,7 @@ struct UsOnboardingUIView: View {
                             
                             ZStack {
                                 VStack {
-                                    Spacer()
+                                    
                                     Rectangle()
                                         .foregroundColor(.black).edgesIgnoringSafeArea(.bottom)
                                         .frame(height: 300)
@@ -60,9 +59,9 @@ struct UsOnboardingUIView: View {
                                         .multilineTextAlignment(.center)
                                         .multilineTextAlignment(.center)
                                     Text("A proven way to make easy money")
-                                        .font(.system(size: 15, weight: .semibold))
+                                        .font(.system(size: 15, weight: .regular))
                                         .multilineTextAlignment(.center)
-                                        .foregroundColor(.gray.opacity(0.5))
+                                        .foregroundColor(.gray.opacity(0.7))
                                     
                                 }.frame(height: 160).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
                                 
@@ -73,9 +72,9 @@ struct UsOnboardingUIView: View {
                                         .multilineTextAlignment(.center)
                                         .multilineTextAlignment(.center)
                                     Text("Help make the app even better")
-                                        .font(.system(size: 15, weight: .semibold))
+                                        .font(.system(size: 15, weight: .regular))
                                         .multilineTextAlignment(.center)
-                                        .foregroundColor(.gray.opacity(0.5))
+                                        .foregroundColor(.gray.opacity(0.7))
                                 }.frame(height: 160).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
                                     .onAppear{
                                         rateApp()
@@ -135,6 +134,7 @@ struct UsOnboardingUIView: View {
                             
                             
                             VStack(spacing: 0) {
+                                Spacer()
                                 HStack {
                                     Spacer()
                                     Button {
@@ -151,9 +151,7 @@ struct UsOnboardingUIView: View {
                                     }
                                 }.padding(.horizontal)
                                 ZStack {
-                                    Image("notifications1923")
-                                    Image("notifications2923")
-                                        .padding(.top, 65)
+                                    Image("notifications927")
                                 }.padding(.top, 35)
                                 ZStack {
                                     Rectangle()
@@ -167,9 +165,9 @@ struct UsOnboardingUIView: View {
                                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                                 .multilineTextAlignment(.center)
                                             Text("Don’t miss the most userful information")
-                                                .font(.system(size: 15, weight: .semibold))
+                                                .font(.system(size: 15, weight: .regular))
                                                 .multilineTextAlignment(.center)
-                                                .foregroundColor(.gray.opacity(0.5))
+                                                .foregroundColor(.gray.opacity(0.7))
                                         }.padding(.horizontal, 30).padding(.bottom, 10).frame(height: 100).foregroundColor(.white)
                                         
                                         
