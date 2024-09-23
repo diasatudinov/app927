@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutsUIView: View {
     
     @ObservedObject var viewModel: WorkoutViewModel
+    @ObservedObject var settingsVM: SettingsViewModel
     let filters = ["All", "Physical training", "Tactical training"]
     @State var selectedFilter: String? = "All"
     
@@ -27,12 +28,12 @@ struct WorkoutsUIView: View {
             VStack {
                 HStack {
                     ZStack {
-                        if false {
-                            //                            Image(uiImage: image)
-//                                .resizable()
-//                                .frame(width: 56, height: 56)
-//                                .scaledToFill()
-//                                .clipShape(Circle())
+                        if let image = settingsVM.account.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 56, height: 56)
+                                .scaledToFill()
+                                .clipShape(Circle())
                         } else {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 32))
@@ -47,12 +48,12 @@ struct WorkoutsUIView: View {
                         }
                     }
                     
-                    Text("Welcome Alex!")
+                    Text("Welcome \(settingsVM.account.name)!")
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .semibold))
                     Spacer()
                     NavigationLink {
-                        NewWorkoutUIView(viewModel: viewModel)
+                        NewWorkoutUIView(viewModel: viewModel).navigationBarBackButtonHidden()
                     } label: {
                         ZStack {
                             Circle()
@@ -111,9 +112,9 @@ struct WorkoutsUIView: View {
                             
                             ForEach(filteredItems, id: \.self) { workout in
                                 NavigationLink {
-                                    // AttractionDetailsUIView(attraction: attraction, viewModel: viewModel)
+                                    EditWorkoutUIView(viewModel: viewModel, workout: workout).navigationBarBackButtonHidden()
                                 } label: {
-                                    WorkoutsCell(workout: workout)
+                                    WorkoutsCell(viewModel: viewModel, workout: workout)
                                 }
                             }
                         
@@ -133,5 +134,5 @@ struct WorkoutsUIView: View {
 }
 
 #Preview {
-    WorkoutsUIView(viewModel: WorkoutViewModel())
+    WorkoutsUIView(viewModel: WorkoutViewModel(), settingsVM: SettingsViewModel())
 }

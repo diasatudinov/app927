@@ -9,20 +9,19 @@ import SwiftUI
 
 struct HomeUIView: View {
     @ObservedObject var viewModel: WorkoutViewModel
-    //@ObservedObject var settingsVM: SettingsViewModel
+    @ObservedObject var settingsVM: SettingsViewModel
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(alignment: .leading) {
                 HStack {
                     ZStack {
-                       // if let image = settingsVM.account.image {
-                        if false {
-//                            Image(uiImage: image)
-//                                .resizable()
-//                                .frame(width: 56, height: 56)
-//                                .scaledToFill()
-//                                .clipShape(Circle())
+                        if let image = settingsVM.account.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 56, height: 56)
+                                .scaledToFill()
+                                .clipShape(Circle())
                         }  else {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 32))
@@ -37,7 +36,7 @@ struct HomeUIView: View {
                         }
                     }
                     
-                    Text("Welcome Alex!")
+                    Text("Welcome \(settingsVM.account.name)!")
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .semibold))
                     Spacer()
@@ -71,7 +70,7 @@ struct HomeUIView: View {
                     
                     ScrollView {
                         ForEach(viewModel.workouts.prefix(5), id: \.self) { workout in
-                            WorkoutsCell(workout: workout)
+                            WorkoutsCell(viewModel: viewModel, workout: workout)
                         }
                         
                         
@@ -88,5 +87,5 @@ struct HomeUIView: View {
 
 
 #Preview {
-    HomeUIView(viewModel: WorkoutViewModel())
+    HomeUIView(viewModel: WorkoutViewModel(), settingsVM: SettingsViewModel())
 }

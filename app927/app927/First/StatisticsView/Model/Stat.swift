@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Stat: Identifiable, Hashable, Codable {
+    var id = UUID()
+    var name: String
+    var number: Int
+    var icon: String
+}

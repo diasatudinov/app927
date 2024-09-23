@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WorkoutsCell: View {
+    @ObservedObject var viewModel: WorkoutViewModel
     @State var workout: Workout
     var body: some View {
         ZStack {
@@ -38,11 +39,15 @@ struct WorkoutsCell: View {
                         .font(.system(size: 12))
                         .foregroundColor(.white.opacity(0.5))
                     Spacer()
-                    Image(systemName: "trash.fill")
-                        .resizable()
-                        .foregroundColor(.white.opacity(0.3))
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 24)
+                    Button {
+                        viewModel.deleteStat(workout)
+                    } label: {
+                        Image(systemName: "trash.fill")
+                            .resizable()
+                            .foregroundColor(.white.opacity(0.3))
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 24)
+                    }
                 }
                 
                 HStack(spacing: 10) {
@@ -69,5 +74,5 @@ struct WorkoutsCell: View {
 }
 
 #Preview {
-    WorkoutsCell(workout: Workout(name: "", venue: "", tasks: "", dayOfWeek: "", startTime: Date(), endTime: Date(), category: ""))
+    WorkoutsCell(viewModel: WorkoutViewModel(), workout: Workout(name: "", venue: "", tasks: "", dayOfWeek: "", startTime: Date(), endTime: Date(), category: ""))
 }

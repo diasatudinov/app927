@@ -47,7 +47,12 @@ struct NewWorkoutUIView: View {
                             .foregroundColor(.clear)
                     
                 }
-                VStack {
+                VStack(alignment: .leading) {
+                    
+                    Text("Information")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(.white)
+                    
                     ZStack(alignment: .leading) {
                         if name.isEmpty {
                             Text("Workout name*")
