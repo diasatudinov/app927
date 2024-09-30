@@ -50,8 +50,8 @@ struct AccountUIView: View {
                 if let image = account.image {
                     Image(uiImage: image)
                         .resizable()
-                        .frame(width: 130, height: 130)
                         .scaledToFill()
+                        .frame(width: 130, height: 130)
                         .clipShape(Circle())
                     
                     

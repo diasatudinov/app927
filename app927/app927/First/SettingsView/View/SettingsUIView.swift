@@ -19,8 +19,8 @@ struct SettingsUIView: View {
                         if let image = viewModel.account.image {
                             Image(uiImage: image)
                                 .resizable()
-                                .frame(width: 56, height: 56)
                                 .scaledToFill()
+                                .frame(width: 56, height: 56)
                                 .clipShape(Circle())
                         } else {
                             Image(systemName: "person.fill")
@@ -59,8 +59,8 @@ struct SettingsUIView: View {
                                         if let image = viewModel.account.image {
                                             Image(uiImage: image)
                                                 .resizable()
-                                                .frame(width: 49, height: 49)
                                                 .scaledToFill()
+                                                .frame(width: 49, height: 49)
                                                 .clipShape(Circle())
                                         } else {
                                             Image(systemName: "person.fill")

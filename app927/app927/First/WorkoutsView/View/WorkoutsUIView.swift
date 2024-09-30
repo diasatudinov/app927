@@ -31,8 +31,8 @@ struct WorkoutsUIView: View {
                         if let image = settingsVM.account.image {
                             Image(uiImage: image)
                                 .resizable()
-                                .frame(width: 56, height: 56)
                                 .scaledToFill()
+                                .frame(width: 56, height: 56)
                                 .clipShape(Circle())
                         } else {
                             Image(systemName: "person.fill")
