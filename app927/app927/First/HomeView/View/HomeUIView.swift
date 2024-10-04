@@ -89,3 +89,4 @@ struct HomeUIView: View {
 #Preview {
     HomeUIView(viewModel: WorkoutViewModel(), settingsVM: SettingsViewModel())
 }
+
