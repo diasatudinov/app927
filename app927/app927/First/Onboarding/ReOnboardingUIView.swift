@@ -22,15 +22,15 @@ struct ReOnboardingUIView: View {
                     switch pageNum {
                     case 1: Image("app927Screen1")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 500)
-                            .padding(.top, 50)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width - 110)
+                            .padding(.top, 10)
                         
                     case 2: Image("app927Screen2")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 500)
-                            .padding(.top, 50)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width - 110)
+                            .padding(.top, 10)
                     default:
                         Image("appScreen3")
                             .resizable()
@@ -54,7 +54,7 @@ struct ReOnboardingUIView: View {
                                         .font(.system(size: 15))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white.opacity(0.5))
-                                }.frame(height: 120).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white).padding(.top, 24)
+                                }.frame(height: UIScreen.main.bounds.height / 7).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white).padding(.top, 24)
                             case 2:
                                 VStack(spacing: 12) {
                                     Text("Elevate Your Basketball \nSkills")
@@ -65,7 +65,7 @@ struct ReOnboardingUIView: View {
                                         .font(.system(size: 15))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white.opacity(0.5))
-                                }.frame(height: 120).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white).padding(.top, 24)
+                                }.frame(height: UIScreen.main.bounds.height / 7).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white).padding(.top, 24)
                             default:
                                 Text("Save information about \nyour favorite routes")
                                     .font(.title)
@@ -89,7 +89,7 @@ struct ReOnboardingUIView: View {
                                     .font(.system(size: 15))
                                     .padding()
                                     .frame(maxWidth: .infinity)
-                            }.frame(height: 50).background(Color.redBtn)
+                            }.frame(height: UIScreen.main.bounds.height / 16.8).background(Color.redBtn)
                                 .cornerRadius(16).padding(.horizontal)
                             
                             HStack(spacing: 8) {

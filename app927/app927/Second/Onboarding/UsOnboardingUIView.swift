@@ -47,7 +47,7 @@ struct UsOnboardingUIView: View {
                                     
                                     Rectangle()
                                         .foregroundColor(.black).edgesIgnoringSafeArea(.bottom)
-                                        .frame(height: 300)
+                                        //.frame(height: 300)
                                 }
                                 VStack {
                                     Spacer()
@@ -63,7 +63,7 @@ struct UsOnboardingUIView: View {
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.gray.opacity(0.7))
                                     
-                                }.frame(height: 160).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
+                                }.frame(height: UIScreen.main.bounds.height / 7).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
                                 
                             case 2:
                                 VStack(spacing: 12) {
@@ -75,7 +75,7 @@ struct UsOnboardingUIView: View {
                                         .font(.system(size: 15, weight: .regular))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.gray.opacity(0.7))
-                                }.frame(height: 160).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
+                                }.frame(height: UIScreen.main.bounds.height / 6).padding(.bottom, 10).padding(.horizontal, 30).foregroundColor(.white)
                                     .onAppear{
                                         rateApp()
                                     }
@@ -117,7 +117,7 @@ struct UsOnboardingUIView: View {
                                         
                                     }
                                     
-                                }
+                                }.padding(.bottom)
                                 
                             }
                         }
@@ -131,8 +131,6 @@ struct UsOnboardingUIView: View {
                             .ignoresSafeArea()
                         
                         ZStack {
-                            
-                            
                             VStack(spacing: 0) {
                                 Spacer()
                                 HStack {
@@ -152,7 +150,11 @@ struct UsOnboardingUIView: View {
                                 }.padding(.horizontal)
                                 ZStack {
                                     Image("notifications927")
-                                }.padding(.top, 35)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: UIScreen.main.bounds.width - 16)
+                                        .padding(.top, 10)
+                                }
                                 ZStack {
                                     Rectangle()
                                         .foregroundColor(.black).edgesIgnoringSafeArea(.bottom)
@@ -168,7 +170,7 @@ struct UsOnboardingUIView: View {
                                                 .font(.system(size: 15, weight: .regular))
                                                 .multilineTextAlignment(.center)
                                                 .foregroundColor(.gray.opacity(0.7))
-                                        }.padding(.horizontal, 30).padding(.bottom, 10).frame(height: 100).foregroundColor(.white)
+                                        }.padding(.horizontal, 30).padding(.bottom, 10).frame(height: UIScreen.main.bounds.height / 7).foregroundColor(.white)
                                         
                                         
                                         
@@ -185,7 +187,7 @@ struct UsOnboardingUIView: View {
                                                 .frame(maxWidth: .infinity)
                                         }.frame(height: 50).background(Color.redBtn)
                                             .cornerRadius(16).padding(.horizontal).padding(.bottom, 50)
-                                    }
+                                    }.padding(.bottom, 20)
                                 }
                             }
                         }
